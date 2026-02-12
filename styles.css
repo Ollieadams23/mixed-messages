@@ -11,11 +11,41 @@ body{
 
 #header{
     text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
 }
 
-#button{
-    margin: 20px 0;
+#header img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
+
+#generate-button {
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: rgb(247, 4, 4);
+    position: relative;
+    width: 300px;         /* adjust size */
+    height: 50px;        /* adjust size */
+    cursor: pointer;    /* shows hand cursor on hover */
+    background: black; /* invisible by default */
+    border: solid 2px rgb(247, 4, 4); /* red border */
+    padding-top: 20px;
+}
+
+
+/* Optional: add a subtle visual cue on hover for testing */
+#generate-button:hover {
+    background: rgba(220, 5, 5, 0.1); /* slight white overlay */
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
 
 #quote-container{
     display: flex;
@@ -24,34 +54,52 @@ body{
     width: 100vw;
     justify-content: space-around;
     padding: 20px;
-    background-color: rgb(240, 240, 240);
+    background-color: transparent;
     text-align: center;
     gap: 15px;
 }
 
-#message{
+
+section div{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid rgb(243, 13, 13);
+    border: none;
     width: 20%;
     padding: 20px;
-    background-color: rgb(240, 240, 240);
+    
     text-align: center;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: bold
+   
 }
+
+
+#message1{
+    position: relative;
+    
+    transform: rotate(-5deg)
+}
+
+#message2{
+    position: relative;
+  
+    transform: rotate(-3deg)
+}
+
+#message3{
+    position: relative;
+    
+    transform: rotate(5deg)
+}
+
+
 
 #messagetext{
     font-size: 1.5rem;
 }
 
-#bar{
-    width: 100%;
-    height: 30px;
-    background-color: rgb(160, 7, 255);
-}
 
 
 @media (max-width: 768px) {
