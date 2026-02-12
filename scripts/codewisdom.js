@@ -10,11 +10,20 @@
 
 // 6. Display the message
 
-const quotes = require('../data/quotes.json');
-const practices = require('../data/bestpractices.json');
-const wisdoms = require('../data/programmingwisdoms.json'); 
+let quotes, practices, wisdoms;
 
-
+// Load JSON data
+async function loadData() {
+    const [quotesData, practicesData, wisdomsData] = await Promise.all([
+        fetch('../data/quotes.json').then(res => res.json()),
+        fetch('../data/bestpractices.json').then(res => res.json()),
+        fetch('../data/programmingwisdoms.json').then(res => res.json())
+    ]);
+    
+    quotes = quotesData;
+    practices = practicesData;
+    wisdoms = wisdomsData;
+}
 
 function getMessage(){
 // Generate random indices for each array
@@ -22,10 +31,22 @@ function getMessage(){
     const practice = (Math.floor(Math.random()* practices.best_practices_quotes.length))
     const wisdom = (Math.floor(Math.random()* wisdoms.wisdom.length))
 
-    const message = 'Quote' + "\n" + quotes.quotes[quote] + "\n\n" + 'Best Practice' + "\n" + practices.best_practices_quotes[practice] + "\n\n" + 'Wisdom' + "\n" + wisdoms.wisdom[wisdom];
-    return message;
+    const messages = [quotes.quotes[quote],
+                        practices.best_practices_quotes[practice],
+                        wisdoms.wisdom[wisdom]]
+
+    return messages;
 }
 
-let message = getMessage();
+// Load data when page loads
+loadData().then(() => {
+    let message = getMessage();
+    console.log(message);
+});
 
-console.log(message);
+generateWisdom = function() {
+    let message = getMessage();
+    document.getElementById("message1").innerText = message[0];
+    document.getElementById("message2").innerText = message[1];
+    document.getElementById("message3").innerText = message[2];
+}

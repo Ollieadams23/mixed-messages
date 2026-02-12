@@ -66,8 +66,8 @@ section div{
     align-items: center;
     justify-content: center;
     border: none;
-    width: 20%;
-    padding: 20px;
+    width: 33%;
+    padding: 2px;
     
     text-align: center;
     font-size: 2rem;
@@ -75,30 +75,31 @@ section div{
    
 }
 
+#message{
+    font-size: 2rem;
+    color: blue;
+}
 
 #message1{
     position: relative;
-    
+    color: black;
     transform: rotate(-5deg)
 }
 
 #message2{
     position: relative;
-  
+    color: black;
     transform: rotate(-3deg)
 }
 
 #message3{
     position: relative;
-    
+    color: black;
     transform: rotate(5deg)
 }
 
 
 
-#messagetext{
-    font-size: 1.5rem;
-}
 
 
 
