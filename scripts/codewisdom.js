@@ -15,9 +15,9 @@ let quotes, practices, wisdoms;
 // Load JSON data
 async function loadData() {
     const [quotesData, practicesData, wisdomsData] = await Promise.all([
-        fetch('../data/quotes.json').then(res => res.json()),
-        fetch('../data/bestpractices.json').then(res => res.json()),
-        fetch('../data/programmingwisdoms.json').then(res => res.json())
+        fetch('data/quotes.json').then(res => res.json()),
+        fetch('data/bestpractices.json').then(res => res.json()),
+        fetch('data/programmingwisdoms.json').then(res => res.json())
     ]);
     
     quotes = quotesData;
